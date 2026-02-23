@@ -12,10 +12,10 @@ public class TestMultiStudentGradeManager
   public void testMultipleStudentsManagedIndependently()
   {
    MultiStudentGradeManager mgr= new MultiStudentGradeManager();
-   mgr.addStudent("Amit");
-   mgr.addStudent("Sumit");
-   mgr.addMarks("Amit",70);
-   mgr.addMarks("Sumit",90);
+   mgr.addStudent("Abhi");
+   mgr.addStudent("ram");
+   mgr.addMarks("Abhi",70);
+   mgr.addMarks("ram",90);
    assertEquals(70,mgr.calculateAverage("Amit"));
    assertEquals(90,mgr.calculateAverage("Sumit"));
   }
@@ -24,11 +24,11 @@ public class TestMultiStudentGradeManager
   public void testCalculateAveragePerStduent()
   {
    MultiStudentGradeManager mgr= new MultiStudentGradeManager();
-   mgr.addStudent("Amit");
-   mgr.addStudent("Sumit");
-   mgr.addMarks("Amit",70);
-   mgr.addMarks("Amit",80);
-   mgr.addMarks("Amit",90);  
+   mgr.addStudent("Abhi");
+   mgr.addStudent("ram");
+   mgr.addMarks("Abhi",70);
+   mgr.addMarks("Abhi",80);
+   mgr.addMarks("Abhi",90);  
    assertEquals(80,mgr.calculateAverage("Amit")); 
   }
 
@@ -38,12 +38,12 @@ public class TestMultiStudentGradeManager
   public void testGetResultEachStudent()
   {
    MultiStudentGradeManager mgr= new MultiStudentGradeManager();
-   mgr.addStudent("Amit");
-   mgr.addStudent("Sumit");
-   mgr.addMarks("Amit",39);
-   mgr.addMarks("Sumit",90);
-   assertEquals("FAIL",mgr.getResult("Amit"));
-   assertEquals("PASS",mgr.getResult("Sumit"));
+   mgr.addStudent("Abhi");
+   mgr.addStudent("ram");
+   mgr.addMarks("Abhi",39);
+   mgr.addMarks("ram",90);
+   assertEquals("FAIL",mgr.getResult("Abhi"));
+   assertEquals("PASS",mgr.getResult("ram"));
   }
   //4.Check that adding marks to a non-existent student throws an exception.
   @Test 
@@ -58,11 +58,11 @@ public class TestMultiStudentGradeManager
   public void testGetTopperStudentFromMultiple()
   {
    MultiStudentGradeManager mgr= new MultiStudentGradeManager();
-   mgr.addStudent("Amit");
-   mgr.addStudent("Sumit");
-   mgr.addMarks("Amit",39);
-   mgr.addMarks("Sumit",90);
-   assertEquals("Sumit", mgr.getTopper());
+   mgr.addStudent("Abhi");
+   mgr.addStudent("ram");
+   mgr.addMarks("Abhi",39);
+   mgr.addMarks("ram",90);
+   assertEquals("ram", mgr.getTopper());
   }
 
 //6.Ensure behavior when no students are added.
