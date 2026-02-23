@@ -15,7 +15,7 @@ class EmployeeServiceTest {
     @Test
     void shouldFilterEmployeesWithSalaryGreaterThan50000() {
         List<Employee> employees = Arrays.asList(
-                new Employee("Vivek", 60000),
+                new Employee("Abhi", 60000),
                 new Employee("John", 40000),
                 new Employee("Sara", 70000)
         );
@@ -23,7 +23,7 @@ class EmployeeServiceTest {
         List<String> result = service.getEmployeesWithHighSalary(employees);
 
         assertEquals(2, result.size());
-        assertTrue(result.contains("Vivek"));
+        assertTrue(result.contains("Abhi"));
         assertTrue(result.contains("Sara"));
     }
 
@@ -42,7 +42,7 @@ class EmployeeServiceTest {
     @Test
     void shouldReturnOnlyNamesNotObjects() {
         List<Employee> employees = Arrays.asList(
-                new Employee("Vivek", 60000)
+                new Employee("Abhi", 60000)
         );
 
         List<String> result = service.getEmployeesWithHighSalary(employees);
